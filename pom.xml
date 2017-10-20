@@ -43,9 +43,8 @@
 
     <scm>
         <connection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-distribution-api.git</conncetion>
-        <developerConnection>scm:svn:https://svn.apache.org/repos/asf/sling/trunk/contrib/extensions/distribution/api
-        </developerConnection>
-        <url>https://gitbox.apache.org/repos/asf?p=sling-org-apache-sling-distribution-api.git.git</url>
+        <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-distribution-api.git</developerConnection>
+        <url>https://gitbox.apache.org/repos/asf?p=sling-org-apache-sling-distribution-api.git</url>
     </scm>
 
     <!-- ======================================================================= -->
