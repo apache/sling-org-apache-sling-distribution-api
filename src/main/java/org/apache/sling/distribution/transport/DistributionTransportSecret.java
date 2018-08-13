@@ -18,10 +18,10 @@
  */
 package org.apache.sling.distribution.transport;
 
-import javax.annotation.CheckForNull;
 import java.util.Map;
-
 import aQute.bnd.annotation.ConsumerType;
+
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The secret to be transported for authenticating transport layer connecting two instances.
@@ -39,7 +39,7 @@ public interface DistributionTransportSecret {
      * @return the credentials as a {@link java.util.Map}, or {@code null} if {@code secret} cannot be represented in terms
      * of a set of key -> value entries
      */
-    @CheckForNull
+    @Nullable
     Map<String, String> asCredentialsMap();
 
 }

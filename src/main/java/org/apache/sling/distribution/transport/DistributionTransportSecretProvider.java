@@ -18,11 +18,11 @@
  */
 package org.apache.sling.distribution.transport;
 
-import javax.annotation.CheckForNull;
-
 import aQute.bnd.annotation.ConsumerType;
 
 import java.net.URI;
+
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A provider for {@link org.apache.sling.distribution.transport.DistributionTransportSecret}s
@@ -41,6 +41,6 @@ public interface DistributionTransportSecretProvider {
      * @return a {@link org.apache.sling.distribution.transport.DistributionTransportSecret secret}, or {@code null} if
      * that cannot be obtained
      */
-    @CheckForNull
+    @Nullable
     DistributionTransportSecret getSecret(URI uri);
 }

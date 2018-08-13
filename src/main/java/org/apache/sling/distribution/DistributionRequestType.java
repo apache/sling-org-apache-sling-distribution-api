@@ -20,7 +20,7 @@ package org.apache.sling.distribution;
 
 import aQute.bnd.annotation.ProviderType;
 
-import javax.annotation.CheckForNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The request type tied to a specific {@link org.apache.sling.distribution.DistributionRequest}, used to decide how
@@ -62,7 +62,7 @@ public enum DistributionRequestType {
      * @param n the name
      * @return the type or {@code null}
      */
-    @CheckForNull
+    @Nullable
     public static DistributionRequestType fromName(String n) {
         if (n == null) {
             return null;

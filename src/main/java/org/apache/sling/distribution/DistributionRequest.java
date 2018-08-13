@@ -18,9 +18,9 @@
  */
 package org.apache.sling.distribution;
 
-import javax.annotation.Nonnull;
-
 import aQute.bnd.annotation.ProviderType;
+
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A {@link org.apache.sling.distribution.DistributionRequest} represents the need from the caller to have
@@ -35,7 +35,7 @@ public interface DistributionRequest {
      *
      * @return the type of the request as a {@link DistributionRequestType}
      */
-    @Nonnull
+    @NotNull
     DistributionRequestType getRequestType();
 
     /**
@@ -43,7 +43,7 @@ public interface DistributionRequest {
      *
      * @return an array of paths
      */
-    @Nonnull
+    @NotNull
     public String[] getPaths();
 
     /**
@@ -52,7 +52,7 @@ public interface DistributionRequest {
      * @param path the path to be checked
      * @return <code>true</code> if the paths are deep
      */
-    public boolean isDeep(@Nonnull String path);
+    public boolean isDeep(@NotNull String path);
 
 
 
@@ -65,6 +65,6 @@ public interface DistributionRequest {
      *
      * @return an array of filters
      */
-    @Nonnull
+    @NotNull
     public String[] getFilters(String path);
 }

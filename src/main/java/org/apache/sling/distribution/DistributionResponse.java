@@ -18,10 +18,10 @@
  */
 package org.apache.sling.distribution;
 
-import javax.annotation.CheckForNull;
-import javax.annotation.Nonnull;
-
 import aQute.bnd.annotation.ProviderType;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A {@link org.apache.sling.distribution.DistributionResponse} represents the outcome of a
@@ -47,7 +47,7 @@ public interface DistributionResponse {
      *
      * @return the state of the associated request
      */
-    @Nonnull
+    @NotNull
     DistributionRequestState getState();
 
     /**
@@ -55,6 +55,6 @@ public interface DistributionResponse {
      * @return a message associated with this response holding information about
      * e.g. why distribution execution failed, etc.
      */
-    @CheckForNull
+    @Nullable
     String getMessage();
 }

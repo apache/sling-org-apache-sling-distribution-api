@@ -21,8 +21,7 @@ package org.apache.sling.distribution;
 
 import aQute.bnd.annotation.ProviderType;
 import org.apache.sling.api.resource.ResourceResolver;
-
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A distributor is responsible for dispatching {@link org.apache.sling.distribution.DistributionRequest}s to distribution agents.
@@ -47,9 +46,9 @@ public interface Distributor {
      * @param resourceResolver    the resource resolver used for authorizing the request,
      * @return a {@link org.apache.sling.distribution.DistributionResponse}
      */
-    @Nonnull
-    DistributionResponse distribute(@Nonnull String agentName, @Nonnull ResourceResolver resourceResolver,
-                                    @Nonnull DistributionRequest distributionRequest);
+    @NotNull
+    DistributionResponse distribute(@NotNull String agentName, @NotNull ResourceResolver resourceResolver,
+                                    @NotNull DistributionRequest distributionRequest);
 
 
 }

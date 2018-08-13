@@ -20,12 +20,12 @@ package org.apache.sling.distribution;
 
 import aQute.bnd.annotation.ProviderType;
 
-import javax.annotation.Nonnull;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A {@link SimpleDistributionRequest} is a {@link DistributionRequest} where all paths are either "deep" or "shallow".
@@ -45,7 +45,7 @@ public final class SimpleDistributionRequest implements DistributionRequest {
      * @param isDeep is <code>true</code> if all paths are "deep" and is <code>false</code> if all paths are "shallow"
      * @param paths the array of paths to be distributed
      */
-    public SimpleDistributionRequest(@Nonnull DistributionRequestType requestType, boolean isDeep, @Nonnull String... paths) {
+    public SimpleDistributionRequest(@NotNull DistributionRequestType requestType, boolean isDeep, @NotNull String... paths) {
         this(requestType, paths, isDeep? new HashSet<String>(Arrays.asList(paths)) : new HashSet<String>());
     }
 
@@ -54,7 +54,7 @@ public final class SimpleDistributionRequest implements DistributionRequest {
      * @param requestType the request type
      * @param paths the array of paths to be distributed
      */
-    public SimpleDistributionRequest(@Nonnull DistributionRequestType requestType, @Nonnull String... paths) {
+    public SimpleDistributionRequest(@NotNull DistributionRequestType requestType, @NotNull String... paths) {
         this(requestType, false, paths);
     }
 
@@ -65,7 +65,7 @@ public final class SimpleDistributionRequest implements DistributionRequest {
      * @param paths the array of paths to be distributed
      * @param deepPaths the set of paths that are to be distributed in depth (with all their children)
      */
-    public SimpleDistributionRequest(@Nonnull DistributionRequestType requestType, @Nonnull String[] paths, @Nonnull Set<String> deepPaths) {
+    public SimpleDistributionRequest(@NotNull DistributionRequestType requestType, @NotNull String[] paths, @NotNull Set<String> deepPaths) {
         this(requestType, paths, deepPaths, new HashMap<String, String[]>());
     }
 
@@ -77,7 +77,7 @@ public final class SimpleDistributionRequest implements DistributionRequest {
      * @param deepPaths the set of paths that are to be distributed in depth (with all their children)
      * @param pathFilters the filters applicable for each path
      */
-    public SimpleDistributionRequest(@Nonnull DistributionRequestType requestType, @Nonnull String[] paths, @Nonnull Set<String> deepPaths, @Nonnull Map<String, String[]> pathFilters) {
+    public SimpleDistributionRequest(@NotNull DistributionRequestType requestType, @NotNull String[] paths, @NotNull Set<String> deepPaths, @NotNull Map<String, String[]> pathFilters) {
         this.requestType = requestType;
         this.paths = paths;
         this.deepPaths = deepPaths;
@@ -89,7 +89,7 @@ public final class SimpleDistributionRequest implements DistributionRequest {
      *
      * @return the type of the request as a {@link DistributionRequestType}
      */
-    @Nonnull
+    @NotNull
     public DistributionRequestType getRequestType() {
         return requestType;
     }
@@ -108,11 +108,11 @@ public final class SimpleDistributionRequest implements DistributionRequest {
      * Returns whether the a path is covering the entire subtree (deep) or just the specified nodes (shallow)
      * @return <code>true</code> if the path is deep
      */
-    public boolean isDeep(@Nonnull String path) {
+    public boolean isDeep(@NotNull String path) {
         return deepPaths.contains(path);
     }
 
-    @Nonnull
+    @NotNull
     public String[] getFilters(String path) {
         String[] filters = pathFilters.get(path);
         return filters != null ? filters : new String[0];
