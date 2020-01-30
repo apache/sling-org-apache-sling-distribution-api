@@ -43,6 +43,10 @@ public interface DistributionEventTopics {
      */
     String AGENT_PACKAGE_DISTRIBUTED = EVENT_BASE + "/agent/package/distributed";
 
+    /**
+     * event for package dropped
+     */
+    String AGENT_PACKAGE_DROPPED = EVENT_BASE + "/agent/package/dropped";
 
     /**
      * event for package imported
