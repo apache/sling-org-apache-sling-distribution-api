@@ -25,11 +25,14 @@ import java.net.URI;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <p>
  * A provider for {@link org.apache.sling.distribution.transport.DistributionTransportSecret}s
- * <p/>
+ * </p>
+ * <p>
  * Such providers can be used by distribution agents implementations in order to plug
  * in different types of {@link org.apache.sling.distribution.transport.DistributionTransportSecret secrets} to be used
  * to authenticate the underlying Sling instances.
+ * </p>
  */
 @ConsumerType
 public interface DistributionTransportSecretProvider {

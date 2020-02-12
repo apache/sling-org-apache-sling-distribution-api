@@ -24,10 +24,13 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <p>
  * A distributor is responsible for dispatching {@link org.apache.sling.distribution.DistributionRequest}s to distribution agents.
- * <p/>
+ * </p>
+ * <p>
  * The distribution agents are executing the requests by creating packages from a source Sling instance containing content for the specified paths
  * and then pushing and installing these on a target instance.
+ * </p>
  */
 @ProviderType
 public interface Distributor {

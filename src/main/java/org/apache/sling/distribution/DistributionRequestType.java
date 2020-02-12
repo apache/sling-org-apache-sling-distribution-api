@@ -23,14 +23,17 @@ import aQute.bnd.annotation.ProviderType;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <p>
  * The request type tied to a specific {@link org.apache.sling.distribution.DistributionRequest}, used to decide how
  * the distribution content should be aggregated.
- * <p/>
+ * </p>
+ * <p>
  * {@code ADD} requests can for example lead to the creation of a package of resources to be persisted on the target instance.
  * {@code DELETE} requests can for example lead to the creation of a "command package" to be sent to the target instance
  * to actually remove the resources specified in {@link DistributionRequest#getPaths()}.
  * {@code PULL} requests can for example lead to the creation of a "command package" that will trigger fetching of content
  * from the target instance.
+ * </p>
  */
 @ProviderType
 public enum DistributionRequestType {

@@ -62,7 +62,7 @@ public interface DistributionRequest {
      * -/foo - exclude /foo node
      *
      * filters are checked in order and the last matched filter determines inclusion/exclusion
-     *
+     * @param path the path to get applicable filters for
      * @return an array of filters
      */
     @NotNull

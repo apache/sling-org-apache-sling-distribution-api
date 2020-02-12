@@ -21,17 +21,20 @@ package org.apache.sling.distribution;
 import aQute.bnd.annotation.ProviderType;
 
 /**
+ * <p>
  * The different states a {@link org.apache.sling.distribution.DistributionRequest} can have during its lifecycle.
  * Allowed transitions of {@link org.apache.sling.distribution.DistributionRequestState} for a certain
  * {@link org.apache.sling.distribution.DistributionRequest} are:
- * {@code #DISTRIBUTED} -> ø
- * {@code #DROPPED} -> ø
- * {@code #ACCEPTED} -> {@code #DROPPED}
- * {@code #ACCEPTED} -> {@code #DISTRIBUTED}
- * <p/>
+ * {@code #DISTRIBUTED} to ø,
+ * {@code #DROPPED} to ø,
+ * {@code #ACCEPTED} to {@code #DROPPED},
+ * {@code #ACCEPTED} to {@code #DISTRIBUTED}.
+ * </p>
+ * <p>
  * {@link org.apache.sling.distribution.DistributionRequest}s executed synchronously
  * will only results in {@code #DISTRIBUTED} or {@code #DROPPED} {@link org.apache.sling.distribution.DistributionRequestState}s
  * while requests executed asynchronously can result in any of {@code #DISTRIBUTED}, {@code #DROPPED} or {@code #ACCEPTED} states.
+ * </p>
  */
 @ProviderType
 public enum DistributionRequestState {

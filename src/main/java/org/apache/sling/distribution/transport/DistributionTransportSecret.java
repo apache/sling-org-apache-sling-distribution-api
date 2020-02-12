@@ -24,10 +24,13 @@ import aQute.bnd.annotation.ConsumerType;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <p>
  * The secret to be transported for authenticating transport layer connecting two instances.
- * <p/>
+ * </p>
+ * <p>
  * Secrets can take different forms, like e.g. username and password, tokens, public keys, etc. and are meant to be used
  * by transport implementations used by distribution agents.
+ * </p>
  */
 @ConsumerType
 public interface DistributionTransportSecret {
@@ -37,7 +40,7 @@ public interface DistributionTransportSecret {
      * about username and password for HTTP authentication.
      *
      * @return the credentials as a {@link java.util.Map}, or {@code null} if {@code secret} cannot be represented in terms
-     * of a set of key -> value entries
+     * of a set of key -&gt; value entries
      */
     @Nullable
     Map<String, String> asCredentialsMap();
