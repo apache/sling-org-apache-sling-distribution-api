@@ -18,8 +18,7 @@
  */
 package org.apache.sling.distribution.event;
 
-
-import aQute.bnd.annotation.ProviderType;
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * an interface containing of the possible properties of events related to distribution

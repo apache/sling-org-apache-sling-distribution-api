@@ -18,10 +18,10 @@
  */
 package org.apache.sling.distribution;
 
-import aQute.bnd.annotation.ProviderType;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * A {@link org.apache.sling.distribution.DistributionResponse} represents the outcome of a
@@ -47,7 +47,7 @@ public interface DistributionResponse {
      *
      * @return the state of the associated request
      */
-    @NotNull
+    @Nonnull
     DistributionRequestState getState();
 
     /**

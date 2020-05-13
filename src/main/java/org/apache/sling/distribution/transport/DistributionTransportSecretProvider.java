@@ -18,11 +18,11 @@
  */
 package org.apache.sling.distribution.transport;
 
-import aQute.bnd.annotation.ConsumerType;
-
 import java.net.URI;
 
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nullable;
+
+import org.osgi.annotation.versioning.ConsumerType;
 
 /**
  * <p>

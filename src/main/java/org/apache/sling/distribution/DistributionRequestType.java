@@ -18,9 +18,9 @@
  */
 package org.apache.sling.distribution;
 
-import aQute.bnd.annotation.ProviderType;
+import javax.annotation.Nullable;
 
-import org.jetbrains.annotations.Nullable;
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <p>

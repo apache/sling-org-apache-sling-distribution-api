@@ -18,15 +18,17 @@
  */
 package org.apache.sling.distribution;
 
-import aQute.bnd.annotation.ProviderType;
+import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.jetbrains.annotations.NotNull;
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * A {@link org.apache.sling.distribution.DistributionRequest} represents the need from the caller to have
  * some content being distributed from a source instance to a target instance.
  */
 @ProviderType
+@ParametersAreNonnullByDefault
 public interface DistributionRequest {
 
 
@@ -35,7 +37,7 @@ public interface DistributionRequest {
      *
      * @return the type of the request as a {@link DistributionRequestType}
      */
-    @NotNull
+    @Nonnull
     DistributionRequestType getRequestType();
 
     /**
@@ -43,7 +45,7 @@ public interface DistributionRequest {
      *
      * @return an array of paths
      */
-    @NotNull
+    @Nonnull
     public String[] getPaths();
 
     /**
@@ -52,7 +54,7 @@ public interface DistributionRequest {
      * @param path the path to be checked
      * @return <code>true</code> if the paths are deep
      */
-    public boolean isDeep(@NotNull String path);
+    public boolean isDeep(String path);
 
 
 
@@ -65,6 +67,6 @@ public interface DistributionRequest {
      * @param path the path to get applicable filters for
      * @return an array of filters
      */
-    @NotNull
+    @Nonnull
     public String[] getFilters(String path);
 }

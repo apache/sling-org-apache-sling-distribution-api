@@ -17,8 +17,7 @@
  * under the License.
  */
 
-@Version("0.1.1")
+@org.osgi.annotation.versioning.Version("0.1.1")
 package org.apache.sling.distribution.transport;
 
-import aQute.bnd.annotation.Version;
 
