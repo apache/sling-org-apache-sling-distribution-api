@@ -20,9 +20,9 @@ package org.apache.sling.distribution.event;
 
 import static org.apache.sling.distribution.event.DistributionEventProperties.DISTRIBUTION_COMPONENT_KIND;
 import static org.apache.sling.distribution.event.DistributionEventProperties.DISTRIBUTION_COMPONENT_NAME;
+import static org.apache.sling.distribution.event.DistributionEventProperties.DISTRIBUTION_PACKAGE_ID;
 import static org.apache.sling.distribution.event.DistributionEventProperties.DISTRIBUTION_PATHS;
 import static org.apache.sling.distribution.event.DistributionEventProperties.DISTRIBUTION_TYPE;
-import static org.apache.sling.distribution.event.DistributionEventProperties.PACKAGE_ID;
 
 import java.util.Dictionary;
 import java.util.Hashtable;
@@ -72,7 +72,7 @@ public class DistributionEvent {
 
     public Event toEvent(String topic) {
         Dictionary<String, Object> props = new Hashtable<String, Object>();
-        props.put(PACKAGE_ID, packageId);
+        props.put(DISTRIBUTION_PACKAGE_ID, packageId);
         props.put(DISTRIBUTION_COMPONENT_NAME, componentName);
         props.put(DISTRIBUTION_COMPONENT_KIND, componentKind);
         props.put(DISTRIBUTION_TYPE, distType);
@@ -82,7 +82,7 @@ public class DistributionEvent {
 
     public static DistributionEvent fromEvent(Event event) {
         return new DistributionEvent(
-                event.getProperty(PACKAGE_ID).toString(), 
+                event.getProperty(DISTRIBUTION_PACKAGE_ID).toString(), 
                 event.getProperty(DISTRIBUTION_COMPONENT_NAME).toString(),
                 event.getProperty(DISTRIBUTION_COMPONENT_KIND).toString(),
                 event.getProperty(DISTRIBUTION_TYPE).toString(),
