@@ -51,5 +51,5 @@ public interface DistributionEventProperties {
     /**
      * Package id
      */
-    String PACKAGE_ID = "distribution.package.id";
+    String DISTRIBUTION_PACKAGE_ID = "distribution.package.id";
 }
