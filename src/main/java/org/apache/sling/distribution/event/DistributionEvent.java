@@ -62,11 +62,11 @@ public class DistributionEvent {
         return componentKind;
     }
 
-    public String getDistributionType() {
+    public String getDistType() {
         return distType;
     }
 
-    public String[] getDistributionPaths() {
+    public String[] getDistPaths() {
         return distPaths;
     }
 
