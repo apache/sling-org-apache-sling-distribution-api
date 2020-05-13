@@ -19,9 +19,10 @@
 
 package org.apache.sling.distribution;
 
-import aQute.bnd.annotation.ProviderType;
+import javax.annotation.Nonnull;
+
 import org.apache.sling.api.resource.ResourceResolver;
-import org.jetbrains.annotations.NotNull;
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <p>
@@ -49,9 +50,9 @@ public interface Distributor {
      * @param resourceResolver    the resource resolver used for authorizing the request,
      * @return a {@link org.apache.sling.distribution.DistributionResponse}
      */
-    @NotNull
-    DistributionResponse distribute(@NotNull String agentName, @NotNull ResourceResolver resourceResolver,
-                                    @NotNull DistributionRequest distributionRequest);
+    @Nonnull
+    DistributionResponse distribute(String agentName, ResourceResolver resourceResolver,
+                                    DistributionRequest distributionRequest);
 
 
 }
