@@ -29,27 +29,28 @@ public interface DistributionEventTopics {
     String EVENT_BASE = "org/apache/sling/distribution";
 
     /**
-     * event for package created
+     * Event raised after the successful creation of a content package.
      */
     String AGENT_PACKAGE_CREATED = EVENT_BASE + "/agent/package/created";
 
     /**
-     * event for package queued
+     * Event raised after successfully storing a content package to the distribution queues.
      */
     String AGENT_PACKAGE_QUEUED = EVENT_BASE + "/agent/package/queued";
 
     /**
-     * event for package distributed
+     * Event raised after successfully distributing a content package from a distribution queue.
      */
     String AGENT_PACKAGE_DISTRIBUTED = EVENT_BASE + "/agent/package/distributed";
 
     /**
-     * event for package dropped
+     * Event raised when a content package could not be distributed
+     * and was removed from a distribution queue.
      */
     String AGENT_PACKAGE_DROPPED = EVENT_BASE + "/agent/package/dropped";
 
     /**
-     * event for package imported
+     * Event raised after successfully importing a content package.
      */
     String IMPORTER_PACKAGE_IMPORTED = EVENT_BASE + "/importer/package/imported";
 }
