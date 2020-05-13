@@ -47,4 +47,9 @@ public interface DistributionEventProperties {
      * property containing the type of the distribution paths
      */
     String DISTRIBUTION_PATHS= "distribution.paths";
+    
+    /**
+     * Package id
+     */
+    String PACKAGE_ID = "distribution.package.id";
 }
