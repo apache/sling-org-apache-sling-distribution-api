@@ -19,7 +19,6 @@
 package org.apache.sling.distribution;
 
 import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
 
 import org.osgi.annotation.versioning.ProviderType;
 
@@ -28,7 +27,6 @@ import org.osgi.annotation.versioning.ProviderType;
  * some content being distributed from a source instance to a target instance.
  */
 @ProviderType
-@ParametersAreNonnullByDefault
 public interface DistributionRequest {
 
 

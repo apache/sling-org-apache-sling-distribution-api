@@ -25,7 +25,6 @@ import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
 
 import org.osgi.annotation.versioning.ProviderType;
 
@@ -33,7 +32,6 @@ import org.osgi.annotation.versioning.ProviderType;
  * A {@link SimpleDistributionRequest} is a {@link DistributionRequest} where all paths are either "deep" or "shallow".
  */
 @ProviderType
-@ParametersAreNonnullByDefault
 public final class SimpleDistributionRequest implements DistributionRequest {
 
 

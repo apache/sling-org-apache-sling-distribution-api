@@ -20,7 +20,6 @@
 package org.apache.sling.distribution;
 
 import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
 
 import org.apache.sling.api.resource.ResourceResolver;
 import org.osgi.annotation.versioning.ProviderType;
@@ -35,7 +34,6 @@ import org.osgi.annotation.versioning.ProviderType;
  * </p>
  */
 @ProviderType
-@ParametersAreNonnullByDefault
 public interface Distributor {
     /**
      * Perform a {@link org.apache.sling.distribution.DistributionRequest} to distribute content from a source
