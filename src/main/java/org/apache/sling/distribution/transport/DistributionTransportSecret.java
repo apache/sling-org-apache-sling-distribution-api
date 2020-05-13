@@ -19,9 +19,10 @@
 package org.apache.sling.distribution.transport;
 
 import java.util.Map;
-import aQute.bnd.annotation.ConsumerType;
 
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nullable;
+
+import org.osgi.annotation.versioning.ConsumerType;
 
 /**
  * <p>

@@ -18,9 +18,9 @@
  */
 package org.apache.sling.distribution;
 
-import aQute.bnd.annotation.ProviderType;
+import javax.annotation.Nullable;
 
-import org.jetbrains.annotations.Nullable;
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <p>
@@ -66,7 +66,7 @@ public enum DistributionRequestType {
      * @return the type or {@code null}
      */
     @Nullable
-    public static DistributionRequestType fromName(String n) {
+    public static DistributionRequestType fromName(@Nullable String n) {
         if (n == null) {
             return null;
         }
