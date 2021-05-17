@@ -21,7 +21,8 @@ package org.apache.sling.distribution.event;
 import org.osgi.annotation.versioning.ProviderType;
 
 /**
- * an interface containing of the possible topics of events related to distribution
+ * an interface containing a list of the possible topics of events related to
+ * distribution
  */
 @ProviderType
 public interface DistributionEventTopics {
@@ -34,20 +35,28 @@ public interface DistributionEventTopics {
     String AGENT_PACKAGE_CREATED = EVENT_BASE + "/agent/package/created";
 
     /**
-     * Event raised after successfully storing a content package to the distribution queues.
+     * Event raised after successfully storing a content package to the distribution
+     * queues.
      */
     String AGENT_PACKAGE_QUEUED = EVENT_BASE + "/agent/package/queued";
 
     /**
-     * Event raised after successfully distributing a content package from a distribution queue.
+     * Event raised after successfully distributing a content package from a
+     * distribution queue.
      */
     String AGENT_PACKAGE_DISTRIBUTED = EVENT_BASE + "/agent/package/distributed";
 
     /**
-     * Event raised when a content package could not be distributed
-     * and was removed from a distribution queue.
+     * Event raised when a content package could not be distributed and was removed
+     * from a distribution queue.
      */
     String AGENT_PACKAGE_DROPPED = EVENT_BASE + "/agent/package/dropped";
+
+    /**
+     * Event raised when a content package has already been committed to the
+     * repository, but before the {#link IMPORTER_PACKAGE_IMPORTED} event is sent.
+     */
+    String IMPORTER_PACKAGE_COMMITTED = EVENT_BASE + "/importer/package/committed";
 
     /**
      * Event raised after successfully importing a content package.
