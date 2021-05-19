@@ -20,6 +20,7 @@ package org.apache.sling.distribution.event;
 
 import static org.apache.sling.distribution.event.DistributionEventProperties.DISTRIBUTION_COMPONENT_KIND;
 import static org.apache.sling.distribution.event.DistributionEventProperties.DISTRIBUTION_COMPONENT_NAME;
+import static org.apache.sling.distribution.event.DistributionEventProperties.DISTRIBUTION_DEEP_PATHS;
 import static org.apache.sling.distribution.event.DistributionEventProperties.DISTRIBUTION_PACKAGE_ID;
 import static org.apache.sling.distribution.event.DistributionEventProperties.DISTRIBUTION_PATHS;
 import static org.apache.sling.distribution.event.DistributionEventProperties.DISTRIBUTION_TYPE;
@@ -36,18 +37,21 @@ public class DistributionEvent {
     private final String componentKind;
     private final String distType;
     private final String[] distPaths;
+    private final String[] distDeepPaths;
 
     public DistributionEvent(
             String packageId,
             String componentName,
             String componentKind,
             String distType,
-            String[] distPaths) {
+            String[] distPaths,
+            String[] distDeepPaths) {
         this.packageId = packageId;
         this.componentName = componentName;
         this.componentKind = componentKind;
         this.distType = distType;
         this.distPaths = distPaths;
+        this.distDeepPaths = distDeepPaths == null ? new String[] {} : distDeepPaths;
     }
 
     public String getPackageId() {
@@ -70,6 +74,10 @@ public class DistributionEvent {
         return distPaths;
     }
 
+    public String[] getDistDeepPaths() {
+        return distDeepPaths;
+    }
+
     public Event toEvent(String topic) {
         Dictionary<String, Object> props = new Hashtable<String, Object>();
         props.put(DISTRIBUTION_PACKAGE_ID, packageId);
@@ -77,6 +85,7 @@ public class DistributionEvent {
         props.put(DISTRIBUTION_COMPONENT_KIND, componentKind);
         props.put(DISTRIBUTION_TYPE, distType);
         props.put(DISTRIBUTION_PATHS, distPaths);
+        props.put(DISTRIBUTION_DEEP_PATHS, distDeepPaths);
         return new Event(topic, props);
     }
 
@@ -86,6 +95,7 @@ public class DistributionEvent {
                 event.getProperty(DISTRIBUTION_COMPONENT_NAME).toString(),
                 event.getProperty(DISTRIBUTION_COMPONENT_KIND).toString(),
                 event.getProperty(DISTRIBUTION_TYPE).toString(),
-                (String[])event.getProperty(DISTRIBUTION_PATHS));
+                (String[])event.getProperty(DISTRIBUTION_PATHS),
+                (String[])event.getProperty(DISTRIBUTION_DEEP_PATHS));
     }
 }

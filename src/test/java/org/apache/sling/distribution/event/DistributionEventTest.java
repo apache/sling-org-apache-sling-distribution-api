@@ -31,6 +31,7 @@ import org.osgi.service.event.Event;
 public class DistributionEventTest {
 
     private static final String PATH1 = "/test";
+    private static final String DEEP_PATH = "/deep";
     private static final String DIST_TYPE = "ADD";
     private static final String NAME = "myagent";
     private static final String KIND = "agent";
@@ -39,7 +40,7 @@ public class DistributionEventTest {
 
     @Before
     public void before() {
-        event = new DistributionEvent(PKG_ID, NAME, KIND, DIST_TYPE, new String[] {PATH1});
+        event = new DistributionEvent(PKG_ID, NAME, KIND, DIST_TYPE, new String[] {PATH1, DEEP_PATH}, new String[] {DEEP_PATH});
     }
 
     @Test
@@ -63,7 +64,9 @@ public class DistributionEventTest {
         assertThat(event2.getComponentName(), equalTo(NAME));
         assertThat(event2.getDistType(), equalTo(DIST_TYPE));
         String[] paths = event2.getDistPaths();
-        assertThat(Arrays.asList(paths), CoreMatchers.hasItems(PATH1));
+        assertThat(Arrays.asList(paths), CoreMatchers.hasItems(PATH1, DEEP_PATH));
+        String[] deepPaths = event2.getDistDeepPaths();
+        assertThat(Arrays.asList(deepPaths), CoreMatchers.hasItems(DEEP_PATH));
     }
 
 }
