@@ -53,12 +53,6 @@ public interface DistributionEventTopics {
     String AGENT_PACKAGE_DROPPED = EVENT_BASE + "/agent/package/dropped";
 
     /**
-     * Event raised when a content package has already been committed to the
-     * repository, but before the {#link IMPORTER_PACKAGE_IMPORTED} event is sent.
-     */
-    String IMPORTER_PACKAGE_COMMITTED = EVENT_BASE + "/importer/package/committed";
-
-    /**
      * Event raised after successfully importing a content package.
      */
     String IMPORTER_PACKAGE_IMPORTED = EVENT_BASE + "/importer/package/imported";
