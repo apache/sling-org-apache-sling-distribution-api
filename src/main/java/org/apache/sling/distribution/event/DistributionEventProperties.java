@@ -56,4 +56,9 @@ public interface DistributionEventProperties {
      * Package id
      */
     String DISTRIBUTION_PACKAGE_ID = "distribution.package.id";
+
+    /**
+     * property containing the time when an item was created and enqueued for distribution
+     */
+    String DISTRIBUTION_ENQUEUE_TIMESTAMP = "distribution.enqueue.timestamp";
 }
