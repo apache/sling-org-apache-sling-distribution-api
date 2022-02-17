@@ -28,7 +28,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * {@link org.apache.sling.distribution.DistributionRequest} as handled by a certain distribution agent.
  * Such a response will include the {@link org.apache.sling.distribution.DistributionRequestState state} of
  * the {@link org.apache.sling.distribution.DistributionRequest request} and optionally a message for more
- * verbose information about the outcome of the request.
+ * verbose information about the outcome of the request and additional {@link DistributionResponseInfo properties}.
  */
 @ProviderType
 public interface DistributionResponse {
@@ -57,4 +57,13 @@ public interface DistributionResponse {
      */
     @Nullable
     String getMessage();
+
+    /**
+     * returns additional properties related to the {@link DistributionRequest}
+     * 
+     * @return additional properties
+     */
+    default DistributionResponseInfo getDistributionInfo() {
+        return DistributionResponseInfo.NONE;
+    }
 }

@@ -16,7 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
-@javax.annotation.ParametersAreNonnullByDefault
-@org.osgi.annotation.versioning.Version("0.4.1")
 package org.apache.sling.distribution;
+
+import javax.annotation.Nonnull;
+
+import org.osgi.annotation.versioning.ProviderType;
+
+/**
+ * A {@link DistributionResponseInfo} represents an additional info for the {@link DistributionRequest request} 
+ */
+@ProviderType
+public interface DistributionResponseInfo {
+    DistributionResponseInfo NONE = new DistributionResponseInfo() {};
+    
+    /**
+     * returns the identifier of the associated {@link DistributionRequest}
+     *
+     * @return the id of the associated request
+     */
+    @Nonnull
+    default String getId() { return "";}
+}
