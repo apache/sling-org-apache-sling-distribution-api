@@ -27,7 +27,11 @@ import org.osgi.annotation.versioning.ProviderType;
  */
 @ProviderType
 public interface DistributionResponseInfo {
-    DistributionResponseInfo NONE = new DistributionResponseInfo() {};
+    DistributionResponseInfo NONE = new DistributionResponseInfo() {
+        @Nonnull @Override public String getId() {
+            return "";
+        }
+    };
     
     /**
      * returns the identifier of the associated {@link DistributionRequest}
@@ -35,5 +39,5 @@ public interface DistributionResponseInfo {
      * @return the id of the associated request
      */
     @Nonnull
-    default String getId() { return "";}
+    String getId();
 }
