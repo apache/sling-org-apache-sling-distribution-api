@@ -48,7 +48,7 @@ public class DistributionResponseTest {
     public void nonEmptyDistributionResponse() {
         DistributionResponse res1 = new TestDistributionResponse(DistributionRequestState.DISTRIBUTED, "success",
             new DistributionResponseInfo() {
-                @Override public String getId() {
+                @Nonnull @Override public String getId() {
                     return "res1";
                 }
             });
@@ -84,8 +84,8 @@ public class DistributionResponseTest {
         @Nullable @Override public String getMessage() {
             return message;
         }
-        
-        @Override public DistributionResponseInfo getDistributionInfo() {
+
+        @Nonnull @Override public DistributionResponseInfo getDistributionInfo() {
             return info;
         }
     }
