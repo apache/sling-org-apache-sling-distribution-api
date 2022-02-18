@@ -63,7 +63,6 @@ public interface DistributionResponse {
      * 
      * @return additional properties
      */
-    default DistributionResponseInfo getDistributionInfo() {
-        return DistributionResponseInfo.NONE;
-    }
+    @Nonnull
+    DistributionResponseInfo getDistributionInfo();
 }

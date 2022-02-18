@@ -32,25 +32,6 @@ import static org.junit.Assert.assertNull;
  */
 public class DistributionResponseTest {
     @Test
-    public void defaultDistributionResponse() {
-        DistributionResponse res = new DistributionResponse() {
-            @Override public boolean isSuccessful() {
-                return false;
-            }
-
-            @Nonnull @Override public DistributionRequestState getState() {
-                return null;
-            }
-
-            @Nullable @Override public String getMessage() {
-                return null;
-            }
-        };
-        assertNotNull(res.getDistributionInfo());
-        assertEquals("", res.getDistributionInfo().getId());
-    }
-    
-    @Test
     public void emptyDistributionResponse() {
         DistributionResponse res = new TestDistributionResponse(DistributionRequestState.DISTRIBUTED, "");
         assertNotNull(res.getDistributionInfo());
