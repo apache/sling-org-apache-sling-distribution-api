@@ -33,6 +33,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * to actually remove the resources specified in {@link DistributionRequest#getPaths()}.
  * {@code PULL} requests can for example lead to the creation of a "command package" that will trigger fetching of content
  * from the target instance.
+ * {@code INVALIDATE} requests can for example lead to the cache invalidation without importing content.
  * </p>
  */
 @ProviderType
@@ -52,6 +53,11 @@ public enum DistributionRequestType {
      * Action type for pulling content
      */
     PULL,
+
+    /**
+     * Action type for invalidating content
+     */
+    INVALIDATE,
 
     /**
      * Action type for testing connection. No content is modified.
