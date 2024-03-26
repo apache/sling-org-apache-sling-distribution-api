@@ -25,6 +25,7 @@ package org.apache.sling.distribution;
  * from successfully completing their task.
  */
 public class PathRetrievalException extends Exception {
+
     /**
      * Constructs a new PathRetrievalException with the specified detail message.
      * @param message the detail message. The detail message is saved for

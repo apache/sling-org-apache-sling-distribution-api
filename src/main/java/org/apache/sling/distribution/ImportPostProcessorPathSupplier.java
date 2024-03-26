@@ -23,5 +23,4 @@ package org.apache.sling.distribution;
  * for the {@link ImportPostProcessor}. This interface might be tailored in the future to include
  * methods specific to the needs of importing and processing tasks.
  */
-public interface ImportPostProcessorPathSupplier extends DistributionPathSupplier {
-}
+public interface ImportPostProcessorPathSupplier extends DistributionPathSupplier {}

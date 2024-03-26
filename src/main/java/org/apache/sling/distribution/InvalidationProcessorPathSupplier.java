@@ -24,5 +24,4 @@ package org.apache.sling.distribution;
  * of paths necessary for invalidation processes, potentially including methods tailored to
  * those processes in the future.
  */
-public interface InvalidationProcessorPathSupplier extends DistributionPathSupplier {
-}
+public interface InvalidationProcessorPathSupplier extends DistributionPathSupplier {}

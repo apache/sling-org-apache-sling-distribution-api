@@ -18,24 +18,26 @@
  */
 package org.apache.sling.distribution;
 
-import java.util.List;
 import java.util.Set;
 
 /**
  * Defines the contract for supplying a set of distribution paths. This interface
- * allows for the retrieval of distribution paths based on a list of initial paths,
- * which can be used to configure or initialize the supplier.
+ * facilitates the retrieval of distribution paths based on the provided distribution
+ * operation context, enabling dynamic and flexible configuration of the supplier.
  */
 public interface DistributionPathSupplier {
     /**
-     * Retrieves a set of distribution paths based on the provided initial paths.
-     * This method allows for dynamic adjustment of the paths based on initial
-     * configuration or other criteria.
+     * Retrieves a set of distribution paths based on the provided distribution operation context.
+     * The context can contain various types of information necessary for determining the distribution
+     * paths, making this method highly adaptable to different requirements and criteria.
      *
-     * @param initialPaths a list of strings representing initial paths that might influence
-     *                     the retrieval or generation of the distribution paths.
-     * @return a set of strings representing the distribution paths.
-     * @throws PathRetrievalException if there is an error in retrieving the distribution paths.
+     * @param distributionOperationContext The distribution operation context, encapsulating all
+     *                                     necessary information in a type-safe manner for computing
+     *                                     the distribution paths.
+     * @return A set of strings representing the computed distribution paths.
+     * @throws PathRetrievalException If there is an error in retrieving the distribution paths,
+     *                                indicating failure to compute or retrieve the necessary paths.
      */
-    Set<String> getDistributionPaths(List<String> initialPaths) throws PathRetrievalException;
+    Set<String> getDistributionPaths(DistributionOperationContext distributionOperationContext)
+        throws PathRetrievalException;
 }
