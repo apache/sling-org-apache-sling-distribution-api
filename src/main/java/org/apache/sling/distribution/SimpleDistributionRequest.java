@@ -19,10 +19,13 @@
 package org.apache.sling.distribution;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.annotation.Nonnull;
 
@@ -80,8 +83,8 @@ public final class SimpleDistributionRequest implements DistributionRequest {
      */
     public SimpleDistributionRequest(DistributionRequestType requestType, String[] paths, Set<String> deepPaths, Map<String, String[]> pathFilters) {
         this.requestType = requestType;
-        this.paths = paths;
-        this.deepPaths = deepPaths;
+        this.paths = sanitise(paths);
+        this.deepPaths = sanitise(deepPaths);
         this.pathFilters = pathFilters;
     }
 
@@ -127,5 +130,15 @@ public final class SimpleDistributionRequest implements DistributionRequest {
                 '}';
     }
 
+    private String[] sanitise(String[] paths) {
+        if (paths == null) return new String[] {};
+        List<String> pathsOut = Arrays.asList(paths).stream().filter(path -> path != null && !path.isEmpty()).collect(Collectors.toList());
+        return pathsOut.toArray(new String[] {});
+    }
+
+    private Set<String> sanitise(Set<String> paths) {
+        if (paths == null) return new HashSet<>();
+        return paths.stream().filter(path -> path != null && !path.isEmpty()).collect(Collectors.toSet());
+    }
 
 }
