@@ -33,7 +33,7 @@
     <!-- P R O J E C T                                                           -->
     <!-- ======================================================================= -->
     <artifactId>org.apache.sling.distribution.api</artifactId>
-    <version>0.7.3-SNAPSHOT</version>
+    <version>0.7.1-SNAPSHOT</version>
 
     <name>Apache Sling Distribution API</name>
     <description>
