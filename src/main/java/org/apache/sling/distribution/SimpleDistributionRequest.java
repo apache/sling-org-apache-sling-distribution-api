@@ -132,13 +132,17 @@ public final class SimpleDistributionRequest implements DistributionRequest {
 
     private String[] sanitise(String[] paths) {
         if (paths == null) return new String[] {};
-        List<String> pathsOut = Arrays.asList(paths).stream().filter(path -> path != null && !path.isEmpty()).collect(Collectors.toList());
+        List<String> pathsOut = Arrays.asList(paths).stream().filter(this::notEmpty).collect(Collectors.toList());
         return pathsOut.toArray(new String[] {});
     }
 
     private Set<String> sanitise(Set<String> paths) {
         if (paths == null) return new HashSet<>();
-        return paths.stream().filter(path -> path != null && !path.isEmpty()).collect(Collectors.toSet());
+        return paths.stream().filter(this::notEmpty).collect(Collectors.toSet());
+    }
+    
+    private boolean notEmpty(String path) {
+        return path != null && !path.trim().isEmpty();
     }
 
 }

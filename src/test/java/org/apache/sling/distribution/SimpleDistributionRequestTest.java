@@ -42,6 +42,12 @@ public class SimpleDistributionRequestTest {
     }
     
     @Test
+    public void testSanitiseSingleSpacePath() {
+        SimpleDistributionRequest req = new SimpleDistributionRequest(DistributionRequestType.ADD, " ");
+        assertThat(req.getPaths().length, equalTo(0));
+    }
+    
+    @Test
     public void testSanitiseOkPaths() {
         SimpleDistributionRequest req = new SimpleDistributionRequest(DistributionRequestType.ADD, "test", "test2");
         assertThat(req.getPaths().length, equalTo(2));
