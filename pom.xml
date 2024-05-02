@@ -33,7 +33,7 @@
     <!-- P R O J E C T                                                           -->
     <!-- ======================================================================= -->
     <artifactId>org.apache.sling.distribution.api</artifactId>
-    <version>0.7.1-SNAPSHOT</version>
+    <version>0.7.2</version>
 
     <name>Apache Sling Distribution API</name>
     <description>
@@ -41,13 +41,13 @@
     </description>
 
     <properties>
-        <project.build.outputTimestamp>2024-04-24T14:43:49Z</project.build.outputTimestamp>
+        <project.build.outputTimestamp>2024-05-02T17:41:12Z</project.build.outputTimestamp>
     </properties>
     <scm>
         <connection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-distribution-api.git</connection>
         <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-distribution-api.git</developerConnection>
         <url>https://github.com/apache/sling-org-apache-sling-distribution-api.git</url>
-      <tag>HEAD</tag>
+      <tag>org.apache.sling.distribution.api-0.7.2</tag>
   </scm>
 
     <!-- ======================================================================= -->
