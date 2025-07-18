@@ -26,8 +26,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import javax.annotation.Nonnull;
-
+import org.jetbrains.annotations.NotNull;
 import org.osgi.annotation.versioning.ProviderType;
 
 /**
@@ -92,7 +91,7 @@ public final class SimpleDistributionRequest implements DistributionRequest {
      *
      * @return the type of the request as a {@link DistributionRequestType}
      */
-    @Nonnull
+    @NotNull
     public DistributionRequestType getRequestType() {
         return requestType;
     }
@@ -115,7 +114,7 @@ public final class SimpleDistributionRequest implements DistributionRequest {
         return deepPaths.contains(path);
     }
 
-    @Nonnull
+    @NotNull
     public String[] getFilters(String path) {
         String[] filters = pathFilters.get(path);
         return filters != null ? filters : new String[0];

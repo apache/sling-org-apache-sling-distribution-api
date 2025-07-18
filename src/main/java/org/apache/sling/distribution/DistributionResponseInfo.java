@@ -18,8 +18,7 @@
  */
 package org.apache.sling.distribution;
 
-import javax.annotation.Nonnull;
-
+import org.jetbrains.annotations.NotNull;
 import org.osgi.annotation.versioning.ProviderType;
 
 /**
@@ -28,7 +27,7 @@ import org.osgi.annotation.versioning.ProviderType;
 @ProviderType
 public interface DistributionResponseInfo {
     DistributionResponseInfo NONE = new DistributionResponseInfo() {
-        @Nonnull @Override public String getId() {
+        @NotNull @Override public String getId() {
             return "";
         }
     };
@@ -38,6 +37,6 @@ public interface DistributionResponseInfo {
      *
      * @return the id of the associated request
      */
-    @Nonnull
+    @NotNull
     String getId();
 }
