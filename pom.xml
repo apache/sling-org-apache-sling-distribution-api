@@ -33,7 +33,7 @@
     <!-- P R O J E C T                                                           -->
     <!-- ======================================================================= -->
     <artifactId>org.apache.sling.distribution.api</artifactId>
-    <version>0.7.3-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <name>Apache Sling Distribution API</name>
     <description>
@@ -47,24 +47,8 @@
         <connection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-distribution-api.git</connection>
         <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-distribution-api.git</developerConnection>
         <url>https://github.com/apache/sling-org-apache-sling-distribution-api.git</url>
-      <tag>org.apache.sling.distribution.api-0.7.2</tag>
-  </scm>
-
-    <!-- ======================================================================= -->
-    <!-- B U I L D                                                               -->
-    <!-- ======================================================================= -->
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>biz.aQute.bnd</groupId>
-                <artifactId>bnd-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+        <tag>master</tag>
+    </scm>
 
     <!-- ======================================================================= -->
     <!-- D E P E N D E N C I E S                                                 -->
