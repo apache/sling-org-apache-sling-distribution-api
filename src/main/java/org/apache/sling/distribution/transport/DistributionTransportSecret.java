@@ -20,8 +20,7 @@ package org.apache.sling.distribution.transport;
 
 import java.util.Map;
 
-import javax.annotation.Nullable;
-
+import org.jetbrains.annotations.NotNull;
 import org.osgi.annotation.versioning.ConsumerType;
 
 /**
@@ -43,7 +42,7 @@ public interface DistributionTransportSecret {
      * @return the credentials as a {@link java.util.Map}, or {@code null} if {@code secret} cannot be represented in terms
      * of a set of key -&gt; value entries
      */
-    @Nullable
+	@NotNull
     Map<String, String> asCredentialsMap();
 
 }

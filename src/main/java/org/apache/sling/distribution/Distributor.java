@@ -19,9 +19,8 @@
 
 package org.apache.sling.distribution;
 
-import javax.annotation.Nonnull;
-
 import org.apache.sling.api.resource.ResourceResolver;
+import org.jetbrains.annotations.NotNull;
 import org.osgi.annotation.versioning.ProviderType;
 
 /**
@@ -50,7 +49,7 @@ public interface Distributor {
      * @param resourceResolver    the resource resolver used for authorizing the request,
      * @return a {@link org.apache.sling.distribution.DistributionResponse}
      */
-    @Nonnull
+	@NotNull
     DistributionResponse distribute(String agentName, ResourceResolver resourceResolver,
                                     DistributionRequest distributionRequest);
 

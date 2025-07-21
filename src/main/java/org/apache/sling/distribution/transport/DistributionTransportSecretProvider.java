@@ -20,8 +20,7 @@ package org.apache.sling.distribution.transport;
 
 import java.net.URI;
 
-import javax.annotation.Nullable;
-
+import org.jetbrains.annotations.Nullable;
 import org.osgi.annotation.versioning.ConsumerType;
 
 /**

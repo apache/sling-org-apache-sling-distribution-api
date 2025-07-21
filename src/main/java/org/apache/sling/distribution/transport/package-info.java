@@ -17,7 +17,6 @@
  * under the License.
  */
 
-@javax.annotation.ParametersAreNonnullByDefault
 @org.osgi.annotation.versioning.Version("0.1.1")
 package org.apache.sling.distribution.transport;
 

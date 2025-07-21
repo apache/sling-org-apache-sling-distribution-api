@@ -18,9 +18,9 @@
  */
 package org.apache.sling.distribution;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.osgi.annotation.versioning.ProviderType;
 
 /**
@@ -47,7 +47,7 @@ public interface DistributionResponse {
      *
      * @return the state of the associated request
      */
-    @Nonnull
+    @NotNull
     DistributionRequestState getState();
 
     /**
@@ -63,6 +63,6 @@ public interface DistributionResponse {
      * 
      * @return additional properties
      */
-    @Nonnull
+    @NotNull
     DistributionResponseInfo getDistributionInfo();
 }

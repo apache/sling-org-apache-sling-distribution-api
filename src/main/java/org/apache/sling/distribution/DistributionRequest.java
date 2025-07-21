@@ -18,8 +18,7 @@
  */
 package org.apache.sling.distribution;
 
-import javax.annotation.Nonnull;
-
+import org.jetbrains.annotations.NotNull;
 import org.osgi.annotation.versioning.ProviderType;
 
 /**
@@ -35,7 +34,7 @@ public interface DistributionRequest {
      *
      * @return the type of the request as a {@link DistributionRequestType}
      */
-    @Nonnull
+    @NotNull
     DistributionRequestType getRequestType();
 
     /**
@@ -43,7 +42,7 @@ public interface DistributionRequest {
      *
      * @return an array of paths
      */
-    @Nonnull
+    @NotNull
     public String[] getPaths();
 
     /**
@@ -65,6 +64,6 @@ public interface DistributionRequest {
      * @param path the path to get applicable filters for
      * @return an array of filters
      */
-    @Nonnull
+    @NotNull
     public String[] getFilters(String path);
 }

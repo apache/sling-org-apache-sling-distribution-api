@@ -18,14 +18,14 @@
  */
 package org.apache.sling.distribution;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Tests for {@link DistributionResponse}
@@ -48,7 +48,7 @@ public class DistributionResponseTest {
     public void nonEmptyDistributionResponse() {
         DistributionResponse res1 = new TestDistributionResponse(DistributionRequestState.DISTRIBUTED, "success",
             new DistributionResponseInfo() {
-                @Nonnull @Override public String getId() {
+                @NotNull @Override public String getId() {
                     return "res1";
                 }
             });
@@ -77,7 +77,7 @@ public class DistributionResponseTest {
             return false;
         }
 
-        @Nonnull @Override public DistributionRequestState getState() {
+        @NotNull @Override public DistributionRequestState getState() {
             return state;
         }
 
@@ -85,7 +85,7 @@ public class DistributionResponseTest {
             return message;
         }
 
-        @Nonnull @Override public DistributionResponseInfo getDistributionInfo() {
+        @NotNull @Override public DistributionResponseInfo getDistributionInfo() {
             return info;
         }
     }
